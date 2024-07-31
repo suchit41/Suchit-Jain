@@ -59,7 +59,7 @@ export const DATA = {
   },
   work: [
     {
-      company: "SmartTeck",
+      company: "Smart Tech LLC ",
       href: "",
       badges: [],
       location: "Remote",
