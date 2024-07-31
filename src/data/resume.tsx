@@ -187,7 +187,24 @@ export const DATA = {
       image: "",
       video: "",
     },
-    
+    {
+  title: "Spam Detection System",
+  href: "#",
+  dates: "2024",
+  active: true,
+  description:
+    "Developed an AI-powered spam detection system using AIML and advanced NLP. Improved email filtering accuracy by 75%, effectively categorizing spam with high precision. Integrated machine learning for continuous performance enhancement and established robust data pipelines for seamless email data processing.",
+  technologies: ["AIML", "NLP", "Machine Learning"],
+  links: [
+    {
+      type: "Website",
+      href: "#",
+      icon: <Icons.globe className="size-3" />,
+    },
+  ],
+  image: "",
+  video: "",
+},
   ],
 
 };
