@@ -204,7 +204,7 @@ export default function Page() {
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just shoot me an email{" "}
                 <Link
-                  href="mailto:your-email@example.com"
+                  href="mailto:jainsuchit12@gmail.com"
                   className="text-blue-500 hover:underline"
                 >
                   here
