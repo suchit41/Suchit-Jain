@@ -1,6 +1,4 @@
-// app/blog/[slug]/page.tsx
-
-import { getPost, getPostSlugs } from "@/data/blog"; // Ensure these functions are correctly implemented
+import { getPost, getPostSlugs } from "@/data/blog";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -9,9 +7,9 @@ import { Suspense } from "react";
 
 // Generates static paths for dynamic routes
 export async function generateStaticParams() {
-  const slugs = await getPostSlugs(); // Function to fetch all post slugs
+  const slugs = await getPostSlugs();
   return slugs.map(slug => ({
-    slug: slug
+    slug
   }));
 }
 
@@ -46,7 +44,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `${DATA.url}/blog/${post.slug}`,
+      url: `${DATA.url}/blog/${params.slug}`,
       images: [
         {
           url: ogImage,
@@ -85,7 +83,7 @@ export default async function Blog({
             image: post.metadata.image
               ? `${DATA.url}${post.metadata.image}`
               : `${DATA.url}/og?title=${post.metadata.title}`,
-            url: `${DATA.url}/blog/${post.slug}`,
+            url: `${DATA.url}/blog/${params.slug}`,
             author: {
               "@type": "Person",
               name: DATA.name,
