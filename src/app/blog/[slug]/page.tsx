@@ -1,9 +1,19 @@
-import { getPost } from "@/data/blog";
+// app/blog/[slug]/page.tsx
+
+import { getPost, getPostSlugs } from "@/data/blog"; // Ensure these functions are correctly implemented
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+
+// Generates static paths for dynamic routes
+export async function generateStaticParams() {
+  const slugs = await getPostSlugs(); // Function to fetch all post slugs
+  return slugs.map(slug => ({
+    slug: slug
+  }));
+}
 
 export async function generateMetadata({
   params,
@@ -13,6 +23,12 @@ export async function generateMetadata({
   };
 }): Promise<Metadata | undefined> {
   let post = await getPost(params.slug);
+
+  if (!post) {
+    return {
+      title: "Post not found",
+    };
+  }
 
   let {
     title,
@@ -37,7 +53,6 @@ export async function generateMetadata({
         },
       ],
     },
-    
   };
 }
 
