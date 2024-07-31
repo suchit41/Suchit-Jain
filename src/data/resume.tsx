@@ -63,7 +63,7 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Remote",
-      title: "AI Engineer Intern",
+      title: "AI Engineer",
       logoUrl: "/smartteck.png",
       start: "april 2024",
       end: "Present",
